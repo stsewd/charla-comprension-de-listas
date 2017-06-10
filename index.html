@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Comprensión de listas en python</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/atom-one-light.css">
+
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="plugin/font-awesome/css/font-awesome.min.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="center">
+        <h1>Comprensión de listas</h1>
+        <p>
+          <small>Santos Gallegos <a href="mailto:santos_g@outlook.com">&lt;santos_g@outlook.com&gt;</a></small>
+          <br>
+          <small>
+              @stsewd
+              <a href="http://github.com/stsewd"><i class="fa fa-github"></i></a>
+              <a href="http://twitter.com/stsewd"><i class="fa fa-twitter"></i></a>
+            </small>
+        </p>
+      </section>
+
+      <section>
+        <section class="center">
+          <h2>Listas y Bucles</h2>
+
+          <aside class="notes">
+            Mostrar resultados del código en un intérprete de python
+          </aside>
+        </section>
+
+        <section>
+          <h2>Listas</h2>
+          <pre>
+            <code class="hlpython3" data-trim>
+lista_numeros = [1, 2, 3]
+
+lista_palabras = list("abcde")
+
+lista_combinada = [1, "dos", 3.0]
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Bucles</h2>
+          <pre>
+            <code class="hlpython3" data-trim>
+for numero in range(10):
+    print(numero)
+
+for numero in [1, 3, 5, 7]:
+    print(numero)
+
+for letra in "palabra":
+    print(letra)
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Ambos</h2>
+          <pre>
+            <code class="hlpython3" data-trim>
+numeros_pares = []
+for numero in range(10):
+    if numero % 2 == 0:
+        numeros_pares.append(numero)
+            </code>
+          </pre>
+        </section>
+
+      </section>
+
+      <section>
+        <h3>¿Qué es la comprensión de listas?</h3>
+        <blockquote cite="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">
+          <p>
+            &ldquo;Provee una forma concisa de crear listas.
+            Una aplicación común es <strong>crear una nueva lista</strong>
+            donde cada elemento es el resultado de aplicar
+            alguna operación a cada miembro <strong>de otra secuencia</strong>...&rdquo;
+          </p>
+          <footer>Documentación de Python</footer>
+        </blockquote>
+
+        <aside class="notes">
+          En general, cualquier iterable
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      center: false,
+      history: true,
+      width: 1100,
+      height: 700,
+      maxScale: 0.7,
+      dependencies: [{
+          src: 'plugin/markdown/marked.js'
+        },
+        {
+          src: 'plugin/markdown/markdown.js'
+        },
+        {
+          src: 'plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+</body>
+
+</html>
