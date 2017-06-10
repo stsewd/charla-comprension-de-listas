@@ -213,6 +213,26 @@ pares_cuadrados = [numero**2 for numero in range(10) <mark>if numero % 2 == 0</m
           </pre>
         </section>
       </section>
+
+      <section>
+        <h2>Comprensión de listas más legibles</h2>
+        <pre>
+          <code class="hlpython3" data-trim>
+numeros_pares = [numero for numero in range(10) if numero % 2 == 0]
+
+numeros_pares = [
+    numero  # Nuevo valor
+    for numero in range(10)  # Recorrer secuencia
+    if numero % 2 == 0  # Condicional
+]
+          </code>
+        </pre>
+
+        <aside class="notes">
+          Podemos tener comprensiones de listas con sentencias
+          muy complejas, mejor hacerlas más legibles.
+        </aside>
+      </section>
         <h2>Comprensión de listas vs map y filter</h2>
         <p>
           Mismo resultado, pero código más claro
