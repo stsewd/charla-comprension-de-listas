@@ -129,6 +129,90 @@ numeros_pares = [numero for numero in range(10) if numero % 2 == 0]
       </section>
 
       <section>
+        <h2>De bucles a comprensión de listas</h2>
+
+        <blockquote cite="http://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/">
+          <p>
+            &ldquo;
+            Toda comprensión de lista puede ser escrita como un bucle <code>for</code>, pero
+            no todo bucle <code>for</code> puede ser escrito como una comprensión de lista.
+            &rdquo;
+          </p>
+          <footer>Trey Hunner</footer>
+        </blockquote>
+      </section>
+
+      <section>
+        <section>
+          <h2>De bucles a comprensión de listas</h2>
+          <pre>
+            <code class="hlpython3" data-trim>
+pares_cuadrados = []
+for numero in range(10):
+    if numero % 2 == 0:
+        pares_cuadrados.append(numero**2)
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h4>1. Copiar la variable que contendrá la nueva lista</h4>
+          <pre>
+            <code class="hlpython3" data-trim data-noescape>
+<mark>pares_cuadrados = []</mark>
+for numero in range(10):
+    if numero % 2 == 0:
+        pares_cuadrados.append(numero**2)
+
+<mark>pares_cuadrados = []</mark>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h4>2. Copiar lo que vamos a agregar a la nueva lista</h4>
+          <pre>
+            <code class="hlpython3" data-trim data-noescape>
+pares_cuadrados = []
+for numero in range(10):
+    if numero % 2 == 0:
+        pares_cuadrados.append(<mark>numero**2</mark>)
+
+pares_cuadrados = [<mark>numero**2</mark>]
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h4>3. Copiar el bucle que recorre la secuencia</h4>
+          <small>¡Sin los dos puntos!</small>
+          <pre>
+            <code class="hlpython3" data-trim data-noescape>
+pares_cuadrados = []
+<mark>for numero in range(10)</mark>:
+    if numero % 2 == 0:
+        pares_cuadrados.append(numero**2)
+
+pares_cuadrados = [numero**2 <mark>for numero in range(10)</mark>]
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h4>4. Copiar el condicional</h4>
+          <small>¡Sin los dos puntos!</small>
+          <pre>
+            <code class="hlpython3" data-trim data-noescape>
+pares_cuadrados = []
+for numero in range(10):
+    <mark>if numero % 2 == 0</mark>:
+        pares_cuadrados.append(numero**2)
+
+pares_cuadrados = [numero**2 for numero in range(10) <mark>if numero % 2 == 0</mark>]
+            </code>
+          </pre>
+        </section>
+      </section>
         <h2>Comprensión de listas vs map y filter</h2>
         <p>
           Mismo resultado, pero código más claro
