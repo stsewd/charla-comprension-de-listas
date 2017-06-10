@@ -288,6 +288,50 @@ numeros_pares = list(
           https://stackoverflow.com/questions/1247486/python-list-comprehension-vs-map
         </aside>
       </section>
+
+      <section>
+        <section class="center">
+          <h2>Otras comprensiones</h2>
+        </section>
+
+        <section>
+          <h3>Comprensión de conjuntos (sets)</h3>
+          <small>¡Nota los <code>{  }</code>!</small>
+          <pre>
+           <code class="hlpython3" data-trim>
+letras_unicas = set()
+for letra in "palabra":
+    letras_unicas.add(letra)
+
+letras_unicas = {letra for letra in "palabra"}
+           </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3>Comprensión de diccionarios (dicts)</h3>
+          <small>¡Nota los <code>{  }</code> y los <code>:</code>!</small>
+          <pre>
+           <code class="hlpython3" data-trim>
+numeros_letras = {
+    1: "uno",
+    2: "dos",
+    3: "tres",
+    4: "cuatro"
+}
+
+letras_numeros = {}
+for numero, letra in numeros_letras.items():
+    letras_numeros[letra] = numero
+
+letras_numeros = {
+    letra: numero
+    for numero, letra in numeros_letras.items()
+}
+           </code>
+          </pre>
+        </section>
+      </section>
     </div>
   </div>
 
