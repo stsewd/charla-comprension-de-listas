@@ -393,6 +393,31 @@ letras_numeros = {
           o usar en una función dos veces.
         </aside>
       </section>
+
+      <section>
+        <h2>Scope de las variables</h2>
+        <p>
+          No hay efectos secundarios sobre nuestras variables.
+        </p>
+        <pre>
+          <code class="hlpython3" data-trim>
+            numero = 5
+            for numero in range(10):
+                pass
+
+            print(numero)
+
+            numero = 5
+            numeros = [
+                numero
+                for numero in range(10)
+            ]
+
+            print(numero)
+          </code>
+        </pre>
+      </section>
+
       <section>
         <h2>Recursos adicionales</h2>
         <ul>
