@@ -237,6 +237,33 @@ numeros_pares = [
           muy complejas, mejor hacerlas más legibles.
         </aside>
       </section>
+
+      <section>
+        <h2>Comprensión de listas y bucles anidados</h2>
+        <pre>
+          <code class="hlpython3" data-trim>
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+matriz_aplanada = [
+    elemento
+    for fila in matriz
+    for elemento in fila
+]
+          </code>
+        </pre>
+
+        <aside class="notes">
+          Escribir la comprensión en forma de bucle for.
+
+          Seguir el orden de los bucles for,
+          es decir, ir del bucle externo al interno
+        </aside>
+      </section>
+
       <section>
         <h2>Comprensión de listas vs map y filter</h2>
         <p>
