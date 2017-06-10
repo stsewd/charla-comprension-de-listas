@@ -336,6 +336,63 @@ letras_numeros = {
           </aside>
         </section>
       </section>
+
+      <section>
+        <h2>No siempre la solución más optima</h2>
+        <ul>
+          <li>
+            A veces sólo necesitamos usar una lista una sóla vez.
+          </li>
+          <li>
+            Pasar una colección a otra función.
+          </li>
+          <li>
+            Procesar la misma colección varias veces.
+          </li>
+        </ul>
+
+        <pre>
+          <code class="hlpython3" data-trim>
+            import timeit  
+
+            # Comprensión de listas
+            timeit.timeit("[n for n in range(10000)]", number=1000)
+
+            # Expresión generadora
+            timeit.timeit("(n for n in range(10000))", number=1000)
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Expresiones generadoras</h2>
+        <p>
+          Aplican las mismas reglas que la comprensión de listas,
+          pero se usan paréntesis. Sólo pueden ser usadas una vez.
+        </p>
+        <small>Los paréntesis son opcionales si se usa dentro de una función.</small>
+        <pre>
+          <code class="hlpython3" data-trim contenteditable>
+            expresion_generadora_numeros_pares = (
+                numero
+                for numero in range(10)
+                if numero % 2 == 0
+            )
+
+            " - ".join(
+                str(numero)
+                for numero in range(10)
+                if numero % 2 == 0
+            )
+          </code>
+        </pre>
+
+        <aside class="notes">
+          Explicar porqué pueden ser usadas una sóla vez,
+          recorrer con next(), un bucle, usar en una comprensión de lista,
+          o usar en una función dos veces.
+        </aside>
+      </section>
       <section>
         <h2>Recursos adicionales</h2>
         <ul>
