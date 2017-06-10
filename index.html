@@ -127,6 +127,31 @@ numeros_pares = [numero for numero in range(10) if numero % 2 == 0]
 
         <footer><small>Tomado de: http://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html</small></footer>
       </section>
+
+      <section>
+        <h2>Comprensión de listas vs map y filter</h2>
+        <p>
+          Mismo resultado, pero código más claro
+        </p>
+
+        <pre>
+          <code class="hlpython3" data-trim>
+numeros_pares = list(
+    map(
+        lambda n: n,
+        filter(lambda numero: numero % 2 == 0, range(10))
+    )
+) 
+          </code>
+        </pre>
+        
+        <aside class="notes">
+          ¿Es más eficiente usar comprensión de listas en lugar de map y filter?
+
+          Según esta respuesta de stackoverflow, la diferencia no es mucha
+          https://stackoverflow.com/questions/1247486/python-list-comprehension-vs-map
+        </aside>
+      </section>
     </div>
   </div>
 
